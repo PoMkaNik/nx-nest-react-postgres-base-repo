@@ -1,0 +1,44 @@
+services:
+  postgresdb:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    container_name: postgresdb-ca
+    env_file:
+      - ../packages/postgresdb/docker.env
+    ports:
+      - 4632:5432
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "2"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - "../packages/postgresdb/initdb.d:/docker-entrypoint-initdb.d"
+
+  # nats:
+  #   image: nats:2.10.9-alpine
+  #   restart: unless-stopped
+  #   container_name: nats-ca
+  #   command: "-c /etc/nats/nats.conf"
+  #   ports:
+  #     - 4222:4222
+  #   volumes:
+  #     - ../packages/nats/nats.conf:/etc/nats/nats.conf:ro
+  #   env_file:
+  #     - ../packages/nats/docker.env
+
+  # redis:
+  #   image: redis:7.4.1-alpine
+  #   restart: unless-stopped
+  #   container_name: redis-ca
+  #   ports:
+  #     - 6379:6379
+  #   volumes:
+  #     - ../packages/redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
+  #     - ../packages/redis/.data:/data
+  #   env_file:
+  #     - ../packages/redis/docker.env
+
+volumes:
+  postgres_data:

@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../dist/out-tsc",
+        "composite": true,
+        "declaration": true,
+        "types": ["node", "typelevel"],
+        "target": "es2021"
+    },
+    "include": ["src/**/*.ts", "../../libs/common/src/**/*.ts"],
+    "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
+}

@@ -1,0 +1,73 @@
+module.exports = {
+    parser: '@typescript-eslint/parser',
+    plugins: [
+        '@nx',
+        '@typescript-eslint',
+        'eslint-plugin-import-helpers',
+        'eslint-plugin-import',
+        'prettier',
+        'filename-rules',
+    ],
+    extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:prettier/recommended',
+    ],
+    rules: {
+        '@typescript-eslint/indent': 'off',
+        'no-case-declarations': 'error',
+        'import/prefer-default-export': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/ban-ts-ignore': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
+        'default-case': ['error', { commentPattern: '^no-default' }],
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'separate-type-imports' }],
+        '@typescript-eslint/switch-exhaustiveness-check': 'error',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-floating-promises': 'off',
+        '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
+        '@typescript-eslint/no-explicit-any': 'warn',
+        '@typescript-eslint/no-use-before-define': [
+            'error',
+            { functions: false, classes: true, variables: true, typedefs: true },
+        ],
+        'no-param-reassign': ['error', { props: false }],
+        '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
+        '@typescript-eslint/no-unsafe-call': 0,
+        '@typescript-eslint/naming-convention': [
+            'error',
+            {
+                selector: 'interface',
+                format: ['PascalCase'],
+                prefix: ['I'],
+                leadingUnderscore: 'forbid',
+                trailingUnderscore: 'forbid',
+            },
+            {
+                selector: 'typeAlias',
+                format: ['PascalCase'],
+                prefix: ['T'],
+                leadingUnderscore: 'forbid',
+                trailingUnderscore: 'forbid',
+            },
+        ],
+        'import-helpers/order-imports': [
+            2,
+            {
+                groups: ['module', 'parent', ['sibling', 'index']],
+                newlinesBetween: 'always',
+                alphabetize: {
+                    order: 'asc',
+                    ignoreCase: true,
+                },
+            },
+        ],
+        'prettier/prettier': ['error', { endOfLine: 'auto' }],
+        // kebab-case имён файлов с разрешенными цифрами
+        'filename-rules/match': [2, /^[a-z0-9.]+(?:-[a-z0-9.]+)*$/],
+        // 'filename-rules/match': [2, 'kebab-case'],
+        '@typescript-eslint/restrict-template-expressions': 'off',
+    },
+};

@@ -1,0 +1,38 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "baseUrl": ".",
+        "target": "ES2020",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "lib": ["es2020", "dom"],
+        "sourceMap": true,
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "resolveJsonModule": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitOverride": true,
+        "isolatedModules": true,
+        "noUncheckedIndexedAccess": true,
+        "strictPropertyInitialization": false,
+        "jsx": "react-jsx",
+        "paths": {
+            "@canalia/common": ["libs/common/src/index.ts"],
+            "@canalia/nest-shared": ["libs/nest-shared/src/index.ts"],
+            "@canalia/sdk/*": ["libs/sdk/src/*"]
+        },
+        "typeRoots": ["libs/sdk/src/types", "libs/nest-shared/src/types", "node_modules/@types"]
+    },
+    "exclude": ["node_modules", "tmp"]
+}
