@@ -6,7 +6,7 @@ export default [
     ...nx.configs['flat/typescript'],
     ...nx.configs['flat/javascript'],
     {
-        ignores: ['**/dist', '**/node_modules', '**/tmp', '**/canalia-api.ts'],
+        ignores: ['**/dist', '**/node_modules', '**/tmp'],
     },
 
     // Базовые правила для всех файлов

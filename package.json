@@ -63,6 +63,8 @@
         "@types/node": "^20.0.0",
         "@types/react": "19.0.0",
         "@types/react-dom": "19.0.0",
+        "@typescript-eslint/eslint-plugin": "^8.34.0",
+        "@typescript-eslint/parser": "^8.34.0",
         "commitlint": "^19.8.1",
         "cz-customizable": "^7.4.0",
         "env-cmd": "^10.1.0",
@@ -115,7 +117,7 @@
     },
     "lint-staged": {
         "./**/*.{js,ts,tsx,jsx,json}": [
-            "nx affected:lint --parallel=5 --uncommitted",
+            "nx affected:lint --parallel=5 --files",
             "nx format:write --uncommitted",
             "nx affected --target=build --uncommitted --configuration=production --outputStyle=stream"
         ]

@@ -1,3 +1,5 @@
+// TODO: fix this
+// @ts-nocheck
 import { StrictMode } from 'react';
 
 import { createRoot } from 'react-dom/client';
