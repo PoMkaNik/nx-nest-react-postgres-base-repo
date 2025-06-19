@@ -2,7 +2,6 @@ import { applyDecorators } from '@nestjs/common';
 import { ApiOkResponse } from '@nestjs/swagger';
 
 import { PaginationSchemaFor } from '../schemas';
-import { ResponseSchemaFor } from '../schemas/response.schema';
 
 /**
  * Декоратор возвращаемой схемы DTO успешного ответа массива значений с пагинацией
@@ -14,7 +13,7 @@ export const ApiOkResponsePaginatedWithSchema = (dto: string | Function, descrip
             description,
             content: {
                 'application/json': {
-                    schema: ResponseSchemaFor(PaginationSchemaFor(dto)),
+                    schema: PaginationSchemaFor(dto),
                 },
             },
         }),

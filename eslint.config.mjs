@@ -31,8 +31,16 @@ export default [
 
     // Общие библиотеки (common, sdk) - базовая конфигурация
     {
-        files: ['libs/common/**/*.ts', 'libs/common/**/*.tsx', 'libs/common/**/*.js', 'libs/common/**/*.jsx',
-            'libs/sdk/**/*.ts', 'libs/sdk/**/*.tsx', 'libs/sdk/**/*.js', 'libs/sdk/**/*.jsx'],
+        files: [
+            'libs/common/**/*.ts',
+            'libs/common/**/*.tsx',
+            'libs/common/**/*.js',
+            'libs/common/**/*.jsx',
+            'libs/sdk/**/*.ts',
+            'libs/sdk/**/*.tsx',
+            'libs/sdk/**/*.js',
+            'libs/sdk/**/*.jsx',
+        ],
         ...base,
         languageOptions: {
             ...base.languageOptions,
@@ -45,7 +53,12 @@ export default [
 
     // NestJS библиотека (nest-shared) - nestjs конфигурация
     {
-        files: ['libs/nest-shared/**/*.ts', 'libs/nest-shared/**/*.tsx', 'libs/nest-shared/**/*.js', 'libs/nest-shared/**/*.jsx'],
+        files: [
+            'libs/nest-shared/**/*.ts',
+            'libs/nest-shared/**/*.tsx',
+            'libs/nest-shared/**/*.js',
+            'libs/nest-shared/**/*.jsx',
+        ],
         ...nestjs,
         languageOptions: {
             ...nestjs.languageOptions,

@@ -4,4 +4,3 @@ export * from './exception.schema';
 export * from './pagination.schema';
 export * from './pagination-meta.schema';
 export * from './password-error.schema';
-export * from './response.schema';

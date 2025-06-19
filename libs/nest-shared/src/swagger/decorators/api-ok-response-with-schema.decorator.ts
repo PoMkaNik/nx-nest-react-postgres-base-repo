@@ -1,8 +1,6 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
 
-import { ResponseSchemaFor } from '../schemas';
-
 /**
  * Декоратор возвращаемой схемы DTO успешного ответа
  */
@@ -13,9 +11,9 @@ export const ApiOkResponseWithSchema = (dto: string | Function, description = '�
             description,
             content: {
                 'application/json': {
-                    schema: ResponseSchemaFor({
+                    schema: {
                         $ref: getSchemaPath(dto),
-                    }),
+                    },
                 },
             },
         }),

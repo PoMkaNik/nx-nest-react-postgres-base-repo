@@ -1,8 +1,6 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
 
-import { ResponseSchemaFor } from '../schemas';
-
 /**
  * Декоратор возвращаемой схемы DTO успешного ответа массива значений
  */
@@ -13,12 +11,12 @@ export const ApiOkResponseArrayWithSchema = (dto: string | Function, description
             description,
             content: {
                 'application/json': {
-                    schema: ResponseSchemaFor({
+                    schema: {
                         type: 'array',
                         items: {
                             $ref: getSchemaPath(dto),
                         },
-                    }),
+                    },
                 },
             },
         }),
